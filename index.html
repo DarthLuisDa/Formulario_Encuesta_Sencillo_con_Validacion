@@ -8,10 +8,12 @@
     <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
+         <!-- Pregunta de Formulario-Encuesta -->
     <h1>De la nueva colección de Figuras Olocoons O2, Cuál es tu Olocoon Favorito?</h1>
-    <form class="container row g-3" name="formulario" method="get">
+
+    <form class="container row g-3" name="formulario" method="get">   <!-- Se creo la clase formulario -->
         <div class="col-md-6">
-          <label for="inputNombre" class="form-label">Nombre</label>
+          <label for="inputNombre" class="form-label">Nombre</label>   
           <input type="text" name= "nombre" class="form-control" id="inputNombre" placeholder="Escribe tu nombre aquí...">
         </div>
        
@@ -36,45 +38,53 @@
 
 
         <div class="form-check">
-            <input class="form-check-input" type="radio" name="sexo" id="flexRadioDefault1">
+            <input class="form-check-input" type="radio" name="personaje" id="flexRadioDefault1">
             <label class="form-check-label" for="flexRadioDefault1">
               Gruba
             </label>
             <img src="assets/IMG_20231112_210413.jpg" alt="">
           </div>
+
           <div class="form-check">
-            <input class="form-check-input" type="radio" name="sexo" id="flexRadioDefault2">
+            <input class="form-check-input" type="radio" name="personaje" id="flexRadioDefault2">
             <label class="form-check-label" for="flexRadioDefault2">
               Lagetar
             </label>
             <img src="assets/IMG_20231112_210344.jpg" alt="">
           </div>
+
           <div class="form-check">
-            <input class="form-check-input" type="radio" name="sexo" id="flexRadioDefault1">
+            <input class="form-check-input" type="radio" name="personaje" id="flexRadioDefault1">
             <label class="form-check-label" for="flexRadioDefault1">
               Jabalor
             </label>
             <img src="assets/IMG_20231112_210251.jpg" alt="">
           </div>
+
             <div class="form-check">
-            <input class="form-check-input" type="radio" name="sexo" id="flexRadioDefault1">
+            <input class="form-check-input" type="radio" name="personaje" id="flexRadioDefault1">
             <label class="form-check-label" for="flexRadioDefault1">
-              Candorfly
+              Candorfli
             </label>
             <img src="assets/IMG_20231112_210402.jpg" alt="">
-          </div> <div class="form-check">
-            <input class="form-check-input" type="radio" name="sexo" id="flexRadioDefault1">
+          </div> 
+          
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="personaje" id="flexRadioDefault1">
             <label class="form-check-label" for="flexRadioDefault1">
               Nulbee
             </label>
             <img src="assets/IMG_20231112_210305.jpg" alt="">
-          </div> <div class="form-check">
-            <input class="form-check-input" type="radio" name="sexo" id="flexRadioDefault1">
+          </div> 
+          
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="personaje" id="flexRadioDefault1">
             <label class="form-check-label" for="flexRadioDefault1">
               Bashau
             </label>
             <img src="assets/IMG_20231112_210328.jpg" alt="">
           </div>
+
         <div class="col-12">
           <div class="form-check">
             <input class="form-check-input" type="checkbox" name = "checkin" id="gridCheck">
@@ -83,13 +93,18 @@
             </label>
           </div>
         </div>
+        
         <div class="col-12">
           <input type="submit" class="btn btn-primary" id="btn" name="btn" value="Enviar">
         </div>
       </form>
 
       <script>
+
+              
           (function(){
+              //Mensaje Nombre
+
               var formulario = document.getElementsByName('formulario')[0];
               elementos = formulario.elements,
               boton = document.getElementById('btn');
@@ -100,9 +115,12 @@
                     e.preventDefault();
                 }
             };
+
               var validar1 = function(e){
                   validarNombre(e);
               }
+
+              //Mensaje Apellido
 
               var validarApellido = function(e){
                 if (formulario.apellido.value == 0){
@@ -114,18 +132,21 @@
                   validarApellido(e);
               }
 
+              //Escoger personaje
 
-              var validarRadio = function(e){
-                if(formulario.sexo[0].checked == true || formulario.sexo[1].checked == true){                
+             var escogerpersonaje = function(e){
+                if(formulario.personaje[0].checked == true || formulario.personaje[1].checked == true || formulario.personaje[2].checked == true || formulario.personaje[3].checked == true|| formulario.personaje[4].checked == true|| formulario.personaje[5].checked == true){                
                 }else{
-                    alert("Completa el campo de sexo");
+                    alert("Escoge un personaje");
                     e.preventDefault();
                 }
               };
 
               var validar3 = function(e){
-                  validarRadio(e);
+                  escogerpersonaje(e);
               }
+
+              //Mensaje Terminos y Condiciones
 
               var validarCheck = function(e){
                 if(formulario.checkin.checked == true){                
